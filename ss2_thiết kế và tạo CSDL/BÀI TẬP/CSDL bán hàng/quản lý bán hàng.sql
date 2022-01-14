@@ -22,7 +22,7 @@ product_price INT
 );
 
 CREATE TABLE order_detail(
-order_qty VARCHAR(30),
+order_qty INT,
 order_id INT,
 product_id INT,
 PRIMARY KEY(order_id,product_id),
