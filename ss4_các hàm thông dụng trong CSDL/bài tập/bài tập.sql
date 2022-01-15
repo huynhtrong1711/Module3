@@ -1,6 +1,6 @@
 USE quan_ly_sinh_vien;
 
-SELECT `subject`.SubId, `subject`.SubName FROM `subject`;
+SELECT `subject`.SubId, `subject`.SubName, MAX(Credit) FROM `subject`;
 
 SELECT `subject`.*, MAX(mark) FROM `subject` JOIN mark ON `subject`.SubId = mark.SubId;
 
