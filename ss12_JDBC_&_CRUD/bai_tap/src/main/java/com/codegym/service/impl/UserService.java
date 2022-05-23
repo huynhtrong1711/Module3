@@ -40,8 +40,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<Users> searchByName(String name) {
-        List<Users> usersList = iUserRepository.searchByName(name);
+    public List<Users> searchByName(String country) {
+        List<Users> usersList = iUserRepository.searchByName(country);
         if (usersList.size() == 0) {
             return null;
         } else {

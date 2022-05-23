@@ -39,8 +39,8 @@ public class UsersServlet extends HttpServlet {
                 request.getRequestDispatcher("/user/delete.jsp").forward(request, response);
                 break;
             case "search" :
-                String name = request.getParameter("name_user");
-                List<Users> list = iUsersService.searchByName(name);
+                String country = request.getParameter("country");
+                List<Users> list = iUsersService.searchByName(country);
                 request.setAttribute("list", list);
                 request.getRequestDispatcher("/user/list.jsp").forward(request, response);
                 break;

@@ -16,5 +16,5 @@ public interface IUserService {
 
     void deleteUser(int id);
 
-    List<Users> searchByName(String name);
+    List<Users> searchByName(String country);
 }

@@ -18,7 +18,7 @@ public class UserRepository implements IUserRepository {
         List<Users> list = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = this.baseRepository.getConnection().
-                    prepareStatement("select * from users");
+                    prepareStatement("select * from users order by name_user asc");
             ResultSet resultSet = preparedStatement.executeQuery();
             Users users;
 
@@ -101,12 +101,12 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public List<Users> searchByName(String name) {
+    public List<Users> searchByName(String country) {
         List<Users> usersList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = this.baseRepository.getConnection().
-                    prepareStatement("select * from users where name_user like ?");
-            preparedStatement.setString(1, "%"+ name + "%");
+                    prepareStatement("select * from users where country like ?");
+            preparedStatement.setString(1, "%"+ country + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             Users users;
             while (resultSet.next()) {
